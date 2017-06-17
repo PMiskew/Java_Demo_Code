@@ -1,5 +1,5 @@
 
-public class Basic_Strings {
+public class Strings_Basics {
 
 	public static void main(String[] args) {
 	
