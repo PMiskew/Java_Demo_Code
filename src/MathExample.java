@@ -16,9 +16,13 @@ public class MathExample {
 	 */
 	public static void main(String[] args) {
 		
-		System.out.println("Math Example");
+		System.out.println("Math Example - Begins");
+		//With Java you have to specify variable type;
+		int num = 9;
+		double numd = 6.7;
+		String name = "Paul";
 		
-		
+		System.out.println("Math Example - ENDS");
 	} //end main
 	
 	
