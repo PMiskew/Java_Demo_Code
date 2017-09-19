@@ -22,6 +22,37 @@ public class MathExample {
 		double numd = 6.7;
 		String name = "Paul";
 		
+		//Java supports BEDMAS
+		num = 5 + 2 *(1+3);
+		
+		//% is the mod operator.  This checks what the remainder
+		num = 5%2;
+		
+		//A single slash performs integer division on two integers
+		//INTEGER DIVISION IS WHEN WE DIVIDE AND CHOP OFF DECIMALS
+		num = 10/3;
+		
+		System.out.println(num);
+		
+		//Complex Math. 
+		//If we want to do some more complex things we can use the
+		//Math class
+		
+		
+		
+		int y = Math.max(78, 23);
+		System.out.println(y);
+	
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
 		System.out.println("Math Example - ENDS");
 	} //end main
 	
