@@ -32,6 +32,9 @@ public class Exercise1_PM {
 		//Calculation 2:
 		System.out.println("Calculation 2: Volume of Cylinder");
 		
+		System.out.print("Input cylinder radius: ");
+		radiusCyl = s.nextDouble();
+		
 		
 		
 		
