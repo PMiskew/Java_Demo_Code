@@ -14,13 +14,46 @@ public class Fraction {
 	int num;
 	int den;
 	
+	/**
+	 * This is considered a default constructor. Key ideas with constructors
+	 * 
+	 *   1. If no constructor is written then a default constructor that takes no parameters.
+	 *   	numeric types = 0
+	 *   	reference types and Strings = null
+	 *   2. If a single constructor is written the default constructor no longer exists
+	 *   3. Constructors do not specify a return type.
+	 *   4. Constructors MUST have the same name as the class. 
+	 *    
+	 */
+	public Fraction() {
+		num = 1;
+		den = 1;
+	}
+	
+	/**
+	 * 
+	 * @param d
+	 * @param n
+	 */
+	public Fraction (int d, int n) {
+		
+		num = n;
+		den = d;
+		
+	}
+	
+	/**
+	 * This is considered an instance method since it does not have 
+	 */
 	public void printFaction() {
 		//this is the same as self in Python
 		//this is how we refer to the implied object
 		System.out.println(this.num+"/"+this.den);
 	}
 	
-	
+	/**
+	 * 
+	 */
 	public void reduce() {
 		//local variables.  They only exist when reduce is run.	
 		int min = Math.min(num,den);
