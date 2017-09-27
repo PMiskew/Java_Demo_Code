@@ -30,7 +30,7 @@ public class Display {
 		}
 	};
 	
-	public MouseListener ml = new MouseListener() {
+	public MouseListener ml = new MouseListener() { 
 
 		@Override
 		public void mouseClicked(MouseEvent evt) {
@@ -77,7 +77,7 @@ public class Display {
 		frame.add(panel);
 		
 		
-		frame.addMouseListener(ml);
+		panel.addMouseListener(ml);
 		frame.setLocation(100, 100);
 		frame.setResizable(false);
 		frame.setVisible(true);

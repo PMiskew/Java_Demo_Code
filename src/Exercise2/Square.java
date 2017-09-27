@@ -36,26 +36,44 @@ public class Square {
 		c = col;
 	}
 	
-	public int findArea() {
+	public Square (Square s) {
+		
+		/*
+		 * Important concept:  You can access any objects fields in a class.
+		 */
+		x = s.x;
+		y = s.y;
+		l = s.l;
+		c = s.c;
+	}
+	public int getArea() {
 		
 		return l*l;
+	
 	}
 	
-	public int findPerimeter() {
+	public int getPerimeter() {
 		
 		return 4*l;
+	
 	}
 	
 	public int getX() {
+		
 		return x;
+	
 	}
 	
 	public int getY() {
+	
 		return y;
+	
 	}
 	
 	public int getLen() {
+	
 		return l;
+	
 	}
 	
 	public boolean containsOrigin() {
@@ -74,6 +92,51 @@ public class Square {
 		
 	}
 	
+	//***********CRITICAL CONCEPTS***********************
+	//
+	//	It is important to understand the difference between returning a reference to an objects
+	//	verse returning a new copy of the object.  You can simply return the reference by wrting
+	//
+	//	return s1
+	//
+	//  However, to return an copy of the object you must first construct it and then return the 
+	//	new object. In our example we have a constructor that can create a new copy.  That is why
+	//	we can write 
+	//
+	//	return new Square(s1);
+	//
+	//	We could first construct the object and then return it. 
+	//
+	//	Square tempSquare = new Square(s1);
+	//	return tempSquare;
+	//
+	//
+	//****************************************************
+	
+	public static Square findLargerCopy(Square s1, Square s2) {
+		
+		if (s1.getArea() > s2.getArea()) {
+			return new Square(s1);
+			
+		}
+		return new Square(s2);
+		
+	}
+	
+	public static Square findLargerReference(Square s1, Square s2) {
+		
+		if (s1.getArea() > s2.getArea()) {
+			return s1;
+			
+		}
+		return s2;
+		
+	}
+	
+	/**
+	 * This function draws the square to the console panel. 
+	 * @param v
+	 */
 	public void drawMe(String v) {
 		
 		//Step 1: Draw top
