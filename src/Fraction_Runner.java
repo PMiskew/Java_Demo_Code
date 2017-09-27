@@ -13,18 +13,13 @@ public class Fraction_Runner {
 		Fraction f2 = new Fraction();
 		
 
-		f1.num = 5;
-		f1.den = 20;
+		f1.setDen(10);
+		f2.setDen(30);
+	
+		System.out.println(f1.getNum()+"/"+f1.getDen());
 		
-		f2.num = 9;
-		f2.den = 10;
-		
-		f1.reduce();
-		
-		System.out.println(f1.num+"/"+f1.den);
-		
-		
-		
+		Cup c1 = new Cup();
+		Cup c2 = new Cup();
 		
 		
 		
