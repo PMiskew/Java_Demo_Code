@@ -1,19 +1,22 @@
 package Exercise2;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 
 public class Display2 {
 
-	ArrayList<Square> list = new ArrayList<Square>();
+	Square s = new Square(0,0);
 	
 	
 	private JFrame frame;
@@ -22,17 +25,26 @@ public class Display2 {
 		
 		public void paint(Graphics g) {
 			
-			
+			System.out.println("HI");
 			g.setColor(Color.WHITE);
 			g.fillRect(0,0,1000,1000);
-			g.setColor(Color.RED);
-			for (int i = 0; i < list.size(); i++) {
-				g.drawRect(list.get(i).getX(), list.get(i).getY(), list.get(i).getX() + 10, list.get(i).getY() + 10);
-				System.out.print("IN"+i);
-			}
+			g.setColor(c);
+			
+			g.drawRect(s.getX(),s.getY(),sideLength.getValue(),sideLength.getValue());
 		}
 	};
 
+	public ActionListener blisten = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			c = new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		}
+		
+		
+		
+	};
 	
 
 	public MouseListener ml = new MouseListener() { 
@@ -42,7 +54,7 @@ public class Display2 {
 			System.out.println("CLICKED");
 			
 			
-			list.add(new Square(evt.getX(),evt.getY()));
+			s = new Square(evt.getX(),evt.getY());
 			panel.repaint();
 		}
 
@@ -80,9 +92,16 @@ public class Display2 {
 	static final int FPS_INIT = 15;  //NEW
 	JSlider sideLength = new JSlider(JSlider.HORIZONTAL, FPS_MIN, FPS_MAX, FPS_INIT); //NEW
 		
-		
+	//*******************NEW CODE FOR CLEAR BUTTON***************
+	private JButton b1 = new JButton("CLEAR");
+	
+	
+	private Color c = Color.RED;
+	
 	public Display2(String title) {
 		
+		
+		b1.addActionListener(blisten);
 		
 		sideLength.setMajorTickSpacing(10); //NEW
 		sideLength.setMinorTickSpacing(1); //NEW
@@ -90,12 +109,13 @@ public class Display2 {
 		sideLength.setPaintLabels(true); //NEW
 		
 		frame = new JFrame(title);
-		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.add(sideLength, BorderLayout.NORTH);
 		
-		frame.add(panel, BorderLayout.SOUTH);
+		frame.add(panel, BorderLayout.CENTER);
 		
+		frame.add(b1, BorderLayout.SOUTH);
 		frame.setSize(500,500);
 		
 		panel.addMouseListener(ml);
