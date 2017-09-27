@@ -46,7 +46,7 @@ public class Taking_Inputs_PM {
 		
 		
 		System.out.print("Please input word: ");
-		word = sstr.next();
+		word = sstr.nextLine();
 		
 		System.out.println(word+" and a number is "+num+" makes "+dnum);
 		
