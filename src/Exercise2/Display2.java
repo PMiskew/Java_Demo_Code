@@ -1,5 +1,6 @@
 package Exercise2;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -91,9 +92,9 @@ public class Display2 {
 		frame = new JFrame(title);
 		
 		
-		frame.add(sideLength);
+		frame.add(sideLength, BorderLayout.NORTH);
 		
-		frame.add(panel);
+		frame.add(panel, BorderLayout.SOUTH);
 		
 		frame.setSize(500,500);
 		
