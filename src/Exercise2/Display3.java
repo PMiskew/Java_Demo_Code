@@ -13,8 +13,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
-public class Display2 {
+public class Display3 {
 
 	Square s = new Square(0,0);
 	
@@ -30,7 +32,7 @@ public class Display2 {
 			g.fillRect(0,0,1000,1000);
 			g.setColor(c);
 			
-			g.drawRect(s.getX(),s.getY(),sideLength.getValue(),sideLength.getValue());
+			g.drawRect(s.getX(),s.getY(),horLength.getValue(),vertLength.getValue());
 		}
 	};
 
@@ -45,6 +47,18 @@ public class Display2 {
 		
 		
 	};
+
+	public ChangeListener slidelisten = new ChangeListener() {
+
+		@Override
+		public void stateChanged(ChangeEvent e) {
+			panel.repaint();
+		}
+		
+		
+		
+	};
+	
 	
 
 	public MouseListener ml = new MouseListener() { 
@@ -90,29 +104,43 @@ public class Display2 {
 	static final int FPS_MIN = 0; //NEW
 	static final int FPS_MAX = 300; //NEW
 	static final int FPS_INIT = 15;  //NEW
-	JSlider sideLength = new JSlider(JSlider.HORIZONTAL, FPS_MIN, FPS_MAX, FPS_INIT); //NEW
-		
+	JSlider horLength = new JSlider(JSlider.HORIZONTAL, FPS_MIN, FPS_MAX, FPS_INIT); //NEW
+
+	JSlider vertLength = new JSlider(JSlider.VERTICAL, FPS_MIN, FPS_MAX, FPS_INIT); //NEW
 	//*******************NEW CODE FOR CLEAR BUTTON***************
 	private JButton b1 = new JButton("CHANGE COLOUR");
 	
 	
 	private Color c = Color.RED;
 	
-	public Display2(String title) {
+	public Display3(String title) {
 		
 		
 		b1.addActionListener(blisten);
 		
-		sideLength.setMajorTickSpacing(50); //NEW
-		sideLength.setMinorTickSpacing(10); //NEW
-		sideLength.setPaintTicks(true); //NEW
+		horLength.setMajorTickSpacing(50); //NEW
+		horLength.setMinorTickSpacing(10); //NEW
+		horLength.setPaintTicks(true); //NEW
+		horLength.addChangeListener(slidelisten);
 	
-		sideLength.setPaintLabels(true); //NEW
+		vertLength.setMajorTickSpacing(50); //NEW
+		vertLength.setMinorTickSpacing(10); //NEW
+		vertLength.setPaintTicks(true); //NEW
+		vertLength.addChangeListener(slidelisten);
+	
+		horLength.setPaintLabels(true); //NEW
+		vertLength.setPaintLabels(true); //NEW
+		
+		
+		
+		
 		
 		frame = new JFrame(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.add(sideLength, BorderLayout.NORTH);
+		frame.add(horLength, BorderLayout.NORTH);
+
+		frame.add(vertLength, BorderLayout.EAST);
 		
 		frame.add(panel, BorderLayout.CENTER);
 		
