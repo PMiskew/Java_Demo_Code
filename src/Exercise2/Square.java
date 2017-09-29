@@ -4,12 +4,20 @@ import java.awt.Color;
 
 public class Square {
 
+	/**
+	 * An instance method is a method that changes or accesses
+	 * an instance field.  
+	 * An instance field is one of the attributes of an instance
+	 * of the class
+	 */
 	private int x; //stores top left x coordinate
 	private int y; //stores top left y coordinate
 	
 	private int l; //stores length of side
 	
 	private Color c = new Color(0,0,0);
+	
+	
 	
 	/**
 	 * 
@@ -100,6 +108,12 @@ public class Square {
 	 * a method as a parameter.  
 	 */
 	
+	/**
+	 * 
+	 */
+	public void setX(int a) {
+		x = a;
+	}
 	/**
 	 * 
 	 * @return
