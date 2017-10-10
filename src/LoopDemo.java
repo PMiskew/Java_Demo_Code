@@ -2,7 +2,9 @@
 public class LoopDemo {
 
 	public static void main(String[] args) {
-
+	
+	
+	
 		/*
 		 * What is a loop structure:
 		 * 
@@ -35,6 +37,11 @@ public class LoopDemo {
 		 * 
 		 * 		5. At bottom of loop apply change and check again. 
 		 */
+		/*
+		 * Why do we declare i in for loop header?
+		 * 
+		 * 		Because it only exists for then loop then
+		 */
 		for (int i = 0; i < 5; i = i + 1) {
 			
 			//LOOP BLOCK
@@ -44,36 +51,72 @@ public class LoopDemo {
 		
 		//Write a counted loop that will print out 0 (inclusive) to 100 (inclusive)
 		//Write a counted loop that will print out 0 (inclusive) to 50 (inclusive) only even numbers 
-		//Write a counted loop that will print 50 (inc) to -50 (exc)
-		for (int i = 50; i >= -50; i = i - 1) {
-			
+		//Write a counted loop that will print out 50 (inc) to -50 (exc)
+		
+		System.out.println("*****************");
+		for (int i = 50; i > -51; i = i - 1) {
 			System.out.println(i);
+		}
+
+		System.out.println("*****************");
+		
+		//Write a counted loop that will find the sum of all numbers from 6(inc) to 17(inc)
+		
+		int sum = 0;
+		
+		for (int i = 6; i < 18; i = i + 1) {
+		
+			sum = sum + i;
 			
 		}
+		
+		
+		
+		
 		
 		//Counted loops are perfect for working with Strings or arrays. 
 		// length arr = 7
 		// index of arr = 0 - 6
-		int[] arr = {12,14,67,2,-11,56,99,900,22};
+		int[] arr = {12,14,67,2,-11,56};
 		
-		
-		//What if I wanted to print every element to the screen?
-		//IMPORTANT: NEVER WRITE IN THE LENGTH MANUALLY.  ALWAYS CALCULATE IT
+		//The loop goes through each index of the array. 
+		//IMPORTANT: YOU SHOULD NEVER NEVER NEVER NEVER WRITE THE ACTUAL LENGTH OF THE ARRAY IN
+		//			 ALWAYS HAVE THE PROGRAM CALCULATE IT!
 		for (int i = 0; i < arr.length; i = i + 1) {
+			
+			System.out.println(arr[i]);
+			
+			
+		}
+		System.out.println("***********************");
+		
+		//Write a loop that will print out all elements of arr in reverse
+		for (int i = arr.length - 1; i >= 0; i = i - 1) {
 			System.out.println(arr[i]);
 		}
 		
-		int count = 0;
+		
+		System.out.println("************************");
+		//Find the sum of all even elements in arr
+		//Big Idea: A counted loop is perfect when you have to look at each element in ar array
+		//Big Idea: A number % 2 == 0 when even
+		//Big Idea: To keep track of something you need to decalre a variable
+		
+		int total = 0;
 		
 		for (int i = 0; i < arr.length; i = i + 1) {
 			
-			if (arr[i] < 0) {
-				count = count + 1;
+			if (arr[i] % 2 == 0) {
+				total = total + arr[i];
 			}
-			
 		}
+
+		System.out.println(total);
 		
-		System.out.println("Count: "+count);
+		
+		
+		
+		
 		
 		
 		
