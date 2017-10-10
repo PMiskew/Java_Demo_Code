@@ -34,8 +34,10 @@ public class ArrayDemo {
 		 *  
 		 */
 		
-		//Creating an array. 
-		
+		 /*
+		  * **************************************************CREATING AN ARRAY*************************************************************
+		  */
+			
 		int[] nums;	//creates an array of integer reference called nums.  The size has not yet been set. 
 		nums = new int[3];	//Creates three integer ELEMENTS in the array nums.  We say nums has 3 elements (length = 3) and indexes 0-2
 		
@@ -52,7 +54,7 @@ public class ArrayDemo {
 		 * 
 		 * So our array nums, which has three elements can be pictures as follows
 		 * 			0	1	2 (Indexes)
-		 * nums -> 0	0	0 (VALUES)
+		 * nums ->  0	0	0 (VALUES)
 		 *
 		 * When we want to modify one or more values in an array we need the name of the array and an index.  This tells us where to store the 
 		 * information
@@ -97,10 +99,22 @@ public class ArrayDemo {
 		 // 			0	1	2 (Indexes)
 		 // nums -> 187	22	66 (VALUES)
 		
+		 /*
+		  * ***************************************************PRINTING AN ARRAYS*************************************************************
+		  */
+			
 		
-		
+		//An array is a collection of variables.  It is a reference variable.  A REFERENCE VARIABLE is a variable that stores the location of the 
+		//information, not the information itself.  This means if you try to print it out it simply prints out the memory reference, which is a
+		//represented as a hexadecimal value
 		
 		System.out.println(nums); //This will print out something
+		
+		
+		
+		
+		
+		
 		
 		
 		
