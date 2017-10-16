@@ -1,0 +1,15 @@
+38
+14
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                    X
+X                 XXXXXXXXXXXXXXXXX  X
+X  XXXXXXXXXXXXXXXX       X          X
+X  X                      X          X
+X  XXXXXXXXXXXXXX         X          X
+X                         X          X
+XXXXXXXXXXXXXXXXX         XLXXXXXXXXXX
+X                                    X
+X  XXXX                              X
+X     X                              X
+X     X                              X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

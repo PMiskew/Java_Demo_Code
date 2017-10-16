@@ -18,9 +18,27 @@ public class ImageExample_KL {
 	private String[] fileNames = {"1_Hydrogen.jpg","2_Helium.jpg","3_Lithium.jpg"};
 	
 	private JFrame frame = new JFrame("Image Example");
+	
+	/*
+	 * This is an example of overriding an existing method in a class
+	 * When we create an instance of JPanel called panel it get all the 
+	 * fields and attributes attributes from the JPanel class. 
+	 * 
+	 * However, we want to give specific instructions for painting to the 
+	 * panel.  To do this we make a custom implement just below. 
+	 * 
+	 * The green arrow shows that we are OVERRIDING the function. 
+	 */
 	private JPanel panel = new JPanel() {
 		
-	
+		/**
+		 * We know that this is an instance method becuase it does not 
+		 * have the modifier static. 
+		 * 
+		 * IMPORTANT: WE NEVER CALL PAINT DIRECTLY.  There are lots of
+		 * little things that need to be done, so we call paint indirectly
+		 * using repaint();
+		 */
 		public void paint(Graphics g ) {
 			
 			try {
