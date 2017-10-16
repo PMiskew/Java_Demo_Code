@@ -19,7 +19,7 @@ public class ImageExample {
 		frame.setLocation(100,100);
 	
 		try {
-		    img = ImageIO.read(new File("helium.jpg"));
+		    img = ImageIO.read(new File("3_Lithium.jpg"));
 		} catch (IOException e) {
 			System.out.println("Not found");
 		}
