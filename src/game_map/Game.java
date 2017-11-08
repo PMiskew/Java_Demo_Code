@@ -27,7 +27,7 @@ public class Game {
 						g.setColor(Color.BLACK);
 					}
 					if (map.getElement(r,c) == 1) {
-						g.setColor(Color.RED);
+						g.setColor(Color.GREEN);
 					}
 					if (map.getElement(r,c) == 2) {
 						g.setColor(Color.BLUE);
@@ -43,7 +43,7 @@ public class Game {
 					}
 				}
 				
-				g.setColor(Color.GREEN);
+				g.setColor(Color.RED);
 				
 				g.fillRect(p.getX(), p.getY(), 10, 10);
 				
@@ -61,35 +61,51 @@ public class Game {
 
 		@Override
 		public void keyTyped(KeyEvent e) {
-			System.out.println("KEYLISTENER");
-			System.out.println(e.getKeyChar());
-			if (e.getKeyChar() == e.VK_W) {
-				p.decY();
-				System.out.println("W");
-			}
-			else if (e.getKeyChar() == e.VK_D) {
-				p.incX();
-
-				System.out.println("D");
-			}
-			else if (e.getKeyChar() == e.VK_S) {
-				p.incY();
-
-				System.out.println("S");
-			}
-			else if (e.getKeyChar() == e.VK_A) {
-				p.decX();
-
-				System.out.println("A");
-			}
 			
-			panel.repaint();
 		}
 
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
+			System.out.println("KEYLISTENER");
+			System.out.println(e.getKeyChar());
+			if (e.getKeyChar() == e.VK_W) {
+				
+				if (p.getY() - 10 > 0) {
+					p.decY();
+				}
+				
+				System.out.println("W");
 			
+			}
+			else if (e.getKeyChar() == e.VK_D) {
+				
+				if (p.getX() + 10 < 490 ) {
+					p.incX();
+				}
+				
+				System.out.println("D");
+			
+			}
+			else if (e.getKeyChar() == e.VK_S) {
+				
+				if (p.getY() + 10 < 490) {
+					p.incY();
+				}
+				
+				System.out.println("S");
+			
+			}
+			else if (e.getKeyChar() == e.VK_A) {
+				
+				if (p.getX() - 10 > 0) {
+					p.decX();
+				}
+				
+				System.out.println("A");
+			}
+			
+			panel.repaint();
 		}
 
 		@Override

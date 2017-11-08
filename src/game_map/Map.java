@@ -17,8 +17,8 @@ public class Map {
 		
 		map = new int[r][c];
 		
-		genRandomMap();
-		//loadFromFile("map1.txt");
+		//genRandomMap();
+		loadFromFile("map2.txt");
 		displayMapConsole();
 		
 	}
@@ -51,10 +51,11 @@ public class Map {
 		
 		try {
 			Scanner s = new Scanner(new File(fileName));
-			
+			System.out.println("test");
 			for (int r = 0; r < map.length; r = r + 1) {
+				String temp = s.nextLine();
 				for (int c = 0; c < map[r].length; c = c + 1) {
-					map[r][c] = s.nextInt();
+					map[r][c] = Integer.parseInt(""+temp.charAt(c));
 				}
 			}
 			
