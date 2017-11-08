@@ -1,5 +1,8 @@
 package game_map;
 
+import java.io.File;
+import java.util.Scanner;
+
 public class Map {
 
 	
@@ -15,6 +18,8 @@ public class Map {
 		map = new int[r][c];
 		
 		genRandomMap();
+		//loadFromFile("map1.txt");
+		displayMapConsole();
 		
 	}
 	
@@ -39,6 +44,23 @@ public class Map {
 			map[0][c] = 0;
 		}
 		
+		
+	}
+	
+	public void loadFromFile(String fileName) {
+		
+		try {
+			Scanner s = new Scanner(new File(fileName));
+			
+			for (int r = 0; r < map.length; r = r + 1) {
+				for (int c = 0; c < map[r].length; c = c + 1) {
+					map[r][c] = s.nextInt();
+				}
+			}
+			
+		} catch (Exception e) {
+			System.out.println("file not found");
+		}
 		
 	}
 	

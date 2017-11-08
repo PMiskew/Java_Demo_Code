@@ -2,8 +2,8 @@ package game_map;
 
 public class Player {
 
-	private int x = 0;
-	private int y = 0;
+	private int x = 10;
+	private int y = 10;
 
 	public Player() {
 		
