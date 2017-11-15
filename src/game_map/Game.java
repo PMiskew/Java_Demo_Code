@@ -14,6 +14,15 @@ public class Game {
 	
 	JFrame frame = new JFrame("Game");
 	
+	JPanel displaypanel = new JPanel() {
+		
+		public void paint(Graphics g) {
+			
+			
+		}
+	};
+	
+	
 	JPanel panel = new JPanel() {
 		
 		public void paint(Graphics g) {
@@ -34,6 +43,9 @@ public class Game {
 					}
 					if (map.getElement(r, c) == 3) {
 						g.setColor(Color.GRAY);
+					}
+					if (map.getElement(r,c) == 4) {
+						g.setColor(Color.DARK_GRAY);
 					}
 					g.fillRect(x, y, 10,10);
 					x = x + 10;
